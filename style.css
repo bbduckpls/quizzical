@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    font-family: "Inter", sans-serif;
+    background-color: #F5F7FB;
+    color: #293264;
+}
+
+/* HOME PAGE */
+
+section.landing-page {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    height: 100vh;
+}
+
+section.landing-page > h1 {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+}
+
+section.landing-page > p {
+    font-size: 1rem;
+    max-width: 400px;
+    line-height: 2em;
+}
+
+section.landing-page > button {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: #4D5B9E;
+    color: #F5F7FB;
+    border: none;
+    border-radius: 15px;
+    padding: 1em 2em;
+}
+
+/* QUIZ PAGE */
+
+section.quiz-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+div.question-div {
+    width: 50vw;
+    padding: 1em;
+    text-align: left;
+    border-bottom: 1px solid #DBDEF0;
+}
+
+div.question-div > legend {
+    font-family: "Karla", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;    
+}
+
+div.answers-div {
+    display: flex;
+    padding-top: 0.75em;
+    gap: 0.5em;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 0.625rem;
+    padding: 0.25em 1em 0.3em;
+    border: 1px solid #4D5B9E;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #F5F7FB;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth transition on hover/checked */
+}
+
+label:has(input[type="radio"]:checked) {
+    background-color: #D6DBF5;
+    border: none;
+    padding: 0.25em 1em;
+}
+
+label.correct,
+label:has(input[type="radio"]:checked).correct {
+    background-color: #94D7A2;
+}
+
+label:has(input[type="radio"]:checked).incorrect {
+    background-color: #F8BCBC;
+    color: #293264;
+}
+
+label:has(input[type="radio"]).disabled {
+    cursor: not-allowed;
+    border: 1px solid #4D5B9E;
+    color: #293264;
+    opacity: 50%;
+}
+
+section.score-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+    gap: 1em;
+}
+
+section.score-section > button {
+    display: block;
+    font-size: 0.75rem;
+    padding: 1em 2em;
+    font-weight: 500;
+    background-color: #4D5B9E;
+    color: #F5F7FB;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+section.score-section > button:disabled {
+    cursor: not-allowed;
+    background-color: gray;
+}
+
+@media (max-width: 664px) {
+    section.score-section {
+        flex-direction: column;
+    }
+    
+    section.answers-div {
+        max-width: 340px;
+        flex-wrap: wrap;
+    }
+}
